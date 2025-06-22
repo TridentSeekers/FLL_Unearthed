@@ -1,0 +1,49 @@
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Axis, Direction, Port
+from pybricks.pupdevices import ColorSensor, Motor
+from pybricks.robotics import DriveBase
+
+#'Daniel', 'Luke', 'Joy'
+Robot_name = 'Daniel'
+# Set up all devices.
+# X: Positive means forward. Negative means backward.
+# Y: Positive means to the left. Negative means to the right.
+# Z: Positive means upward. Negative means downward.
+
+if Robot_name == 'Daniel':
+    HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+    DRIVE_LEFT = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=62.4, axle_track=135)
+    LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+elif Robot_name == 'Luke':
+    HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+    DRIVE_LEFT = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=62.4, axle_track=135)
+    LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+elif Robot_name == 'Joy':
+    HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+    DRIVE_LEFT = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.F, Direction.CLOCKWISE)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=62.4, axle_track=135)
+    LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+
+
+# Initialize variables.
+SPEED = 620
+ACCELERATION = 600
+TURN_SPEED = 400
+TURN_ACCELERATION = 1000
+MANUAL_MOTOR_SPEED = 250
+
+
+
+# The main program starts here.
+# This is where you configure all the variables as well as
+# the parts of the robot. These values are then imported/used as necessary.
+
+# Change to match the setup of your robot. Adjust speeds as necessary
