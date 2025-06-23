@@ -9,6 +9,16 @@ async def display_pulse_icon(icon):
 async def display_icon(icon):
     HUB.display.icon(icon)
 
+TRIDENT = Matrix(
+    [
+        [0, 0, 100, 0, 0],
+        [100, 0, 100, 0, 100],
+        [100, 100, 100, 100, 100],
+        [0, 0, 100, 0, 0],
+        [0, 0, 100, 0, 0],
+    ]
+)
+
 REBEL = Matrix(
     [
         [0, 0, 100, 0, 0],

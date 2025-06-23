@@ -5,6 +5,7 @@ from pybricks.tools import multitask, run_task, wait
 from measurements import left_attach_measurements, push_measurements, right_attach_measurements
 from library import set_drivebase
 # Pre-set 9 runs. Please modify subroutines RUN1 to RUN9.
+from RUN_TEST import run_test
 from RUN1 import run1
 from RUN2 import run2
 from RUN3 import run3
@@ -41,6 +42,7 @@ async def main():
     # Add the programs (Missons) below they will appear in the order placed
     # Missions will need to be imported, see example missions/utility programs
     # below
+    await add_program(run_test, 'T', Color.WHITE)
     await add_program(run1, '1', Color.GREEN)
     await add_program(run2, '2', Color.GREEN)
     await add_program(run3, '3', Color.GREEN)
