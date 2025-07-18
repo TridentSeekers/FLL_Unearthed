@@ -17,6 +17,20 @@ async def print_drivebase_settings():
     print(f"Turn Rate: {DRIVE_BASE.settings()[2]} deg/s, Turn Accel: {DRIVE_BASE.settings()[3]} deg/s²" )
 
 async def print_battery_level():
+
+    chargerstatus = hub.charger.status()
+    if chargerstatus == 0:
+        print("Charger Status: Not connected")
+    elif chargerstatus == 1:
+        print("Charger Status: Charging")
+    elif chargerstatus == 2:
+        print("Charger Status: Full")
+    elif chargerstatus == 3:
+        print("Charger Status: Error")
+    else:
+        # This should never happen, but just in case
+        print("Charger Status: Unknown")   
+
     battery_voltage = hub.battery.voltage()
     print(f"Battery voltage: {battery_voltage} mV")
     battery_percentage(battery_voltage)

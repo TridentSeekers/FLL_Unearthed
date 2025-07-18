@@ -3,7 +3,7 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 from measurements import left_attach_measurements, push_measurements, right_attach_measurements
-from library import set_drivebase
+from library import set_drivebase, battery_percentage
 # Pre-set 9 runs. Please modify subroutines RUN1 to RUN9.
 from RUN_TEST import run_test
 from RUN1 import run1
@@ -39,12 +39,15 @@ async def main():
     # If your wheels slip your distances will be off. Lower accelration as needed
     # in the robot_config file to eliminate wheel slippage. These values will depend on wheel choice, center of gravity of your robot and robot weight.
     await print_battery_level()
+
+ 
+    
     
     
     # Add the programs (Missons) below they will appear in the order placed
     # Missions will need to be imported, see example missions/utility programs
     # below
-    await add_program(print_battery_level, 'B', Color.WHITE)
+    #await add_program(print_battery_level, 'B', Color.WHITE)
     await add_program(run_test, 'T', Color.WHITE)
     await add_program(run1, '1', Color.GREEN)
     await add_program(run2, '2', Color.GREEN)
