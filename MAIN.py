@@ -30,6 +30,7 @@ async def main():
         wait(0),
     )
     # Print to consule the default drivebase settings
+    await set_drivebase()
     await print_drivebase_settings()
     # Override these settings. Note pybricks is conservative with speeds.
     # The default speeds are about 40% of what the motors can handle
@@ -38,10 +39,12 @@ async def main():
     # If your wheels slip your distances will be off. Lower accelration as needed
     # in the robot_config file to eliminate wheel slippage. These values will depend on wheel choice, center of gravity of your robot and robot weight.
     await print_battery_level()
-    await set_drivebase()
+    
+    
     # Add the programs (Missons) below they will appear in the order placed
     # Missions will need to be imported, see example missions/utility programs
     # below
+    await add_program(print_battery_level, 'B', Color.WHITE)
     await add_program(run_test, 'T', Color.WHITE)
     await add_program(run1, '1', Color.GREEN)
     await add_program(run2, '2', Color.GREEN)

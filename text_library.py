@@ -4,7 +4,7 @@ Library for text based code
 
 from pybricks.hubs import PrimeHub
 from robot_config import DRIVE_BASE, Robot_name
-from pybricks.tools import multitask
+from pybricks.tools import wait
 from library import battery_percentage
 from pybricks.parameters import Color
 
@@ -22,13 +22,15 @@ async def print_battery_level():
     battery_percentage(battery_voltage)
     percentage = battery_percentage(battery_voltage)
     print(f"Battery level: {percentage:.1f}%")
+    
 
-    if percentage < 20:
+    if percentage < 40:
         hub.light.on(Color.RED)
-        print("Low battery! Please charge.")
-    elif percentage < 60:
+        print("Low battery! Must charge.")
+    elif percentage < 70:
         hub.light.on(Color.ORANGE)
-        print("Warning 60% battery! Please charge.")
+        print("Warning 70% battery!")
     else:
         hub.light.on(Color.GREEN)
 
+ 
