@@ -14,6 +14,10 @@ from pybricks.pupdevices import Motor as _Motor, DCMotor as _DCMotor
 from pybricks.parameters import Button, Direction, Port
 from pybricks.tools import wait, StopWatch
 
+
+Robot_name = 'Joy'
+
+
 # ---------- Begin Allow Missing Motors ----------
 def do_nothing(*args, **kwargs):
     return 0
@@ -37,10 +41,25 @@ def Motor(port, direction=Direction.CLOCKWISE):
 
 DCMotor = Motor
 # ---------- End Allow Missing Motors ----------
-
 hub = PrimeHub()
-motorLeft = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-motorRight = Motor(Port.B)
+if Robot_name == 'Daniel':
+    DRIVE_LEFT = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+elif Robot_name == 'Luke':
+    DRIVE_LEFT = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+elif Robot_name == 'Joy':
+    DRIVE_LEFT = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.A, Direction.CLOCKWISE)
+    LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+
+motorLeft = DRIVE_LEFT
+motorRight = DRIVE_RIGHT
 timer = StopWatch()
 
 buf_left = 0
