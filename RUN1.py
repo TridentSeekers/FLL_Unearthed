@@ -13,7 +13,7 @@ async def run1():
     DRIVE_BASE.use_gyro(True)
     watch = StopWatch()
     time1 = watch.time() 
-    await DRIVE_BASE.straight(100)
+    await DRIVE_BASE.turn(360)
     
   
     # await DRIVE_BASE.straight(300)
