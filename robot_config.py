@@ -3,7 +3,8 @@ from pybricks.parameters import Axis, Direction, Port
 from pybricks.pupdevices import ColorSensor, Motor
 from pybricks.robotics import DriveBase
 
-#'Daniel', 'Luke', 'Joy'
+#'Daniel', 'Luke', 'Joy','Aaron', 'Lincoln'
+# Set the robot name to match the configuration in robot_config.py  
 Robot_name = 'Daniel'
 # Set up all devices.
 # X: Positive means forward. Negative means backward.
@@ -34,6 +35,22 @@ elif Robot_name == 'Joy':
     # The axle track is the distance between the two drive wheels.
     LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+elif Robot_name == 'Aaron':
+    HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+    DRIVE_LEFT = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=130)
+    # The axle track is the distance between the two drive wheels.
+    LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+elif Robot_name == 'Lincoln':
+    HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+    DRIVE_LEFT = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=130)
+    # The axle track is the distance between the two drive wheels.
+    LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
 
 
 # Initialize variables.
