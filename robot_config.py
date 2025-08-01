@@ -23,7 +23,7 @@ elif Robot_name == 'Luke':
     HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
     DRIVE_LEFT = Motor(Port.A, Direction.COUNTERCLOCKWISE)
     DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
-    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=130)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=120)
     # The axle track is the distance between the two drive wheels.
     LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
@@ -31,7 +31,7 @@ elif Robot_name == 'Joy':
     HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
     DRIVE_LEFT = Motor(Port.D, Direction.COUNTERCLOCKWISE)
     DRIVE_RIGHT = Motor(Port.A, Direction.CLOCKWISE)
-    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.0, axle_track=130)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.0, axle_track=125)
     # The axle track is the distance between the two drive wheels.
     LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
