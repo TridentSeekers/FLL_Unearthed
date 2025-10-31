@@ -6,15 +6,14 @@ from measurements import left_attach_measurements, push_measurements, right_atta
 from library import set_drivebase, battery_percentage
 # Pre-set 9 runs. Please modify subroutines RUN1 to RUN9.
 from RUN_TEST import run_test
-from RUN1 import run1
-from RUN2 import run2
-from RUN3 import run3
-from RUN4 import run4
-from RUN5 import run5
-from RUN6 import run6
-from RUN7 import run7
-from RUN8 import run8
-from RUN9 import run9
+from M5678_Daniel import m5678
+from M9_10_Daniel import m910
+from M11_13_Joy import m11_13
+from M3M4_Luke import m3m4
+from M1M2_Luke import m1m2
+from m14_lincoln import m14
+from m12_aaron import m12
+
 
 from text_library import print_drivebase_settings, print_battery_level
 from ui import add_program, user_interface
@@ -49,15 +48,15 @@ async def main():
     # below
     #await add_program(print_battery_level, 'B', Color.WHITE)
     await add_program(run_test, 'T', Color.WHITE)
-    await add_program(run1, '1', Color.GREEN)
-    await add_program(run2, '2', Color.GREEN)
-    await add_program(run3, '3', Color.GREEN)
-    await add_program(run4, '4', Color.GREEN)
-    await add_program(run5, '5', Color.GREEN)
-    await add_program(run6, '6', Color.GREEN)
-    await add_program(run7, '7', Color.GREEN)
-    await add_program(run8, '8', Color.GREEN)
-    await add_program(run9, '9', Color.GREEN)
+    await add_program(m910, '1', Color.GREEN)
+    await add_program(m5678, '2', Color.GREEN)
+    await add_program(m11_13, '3', Color.GREEN)
+    await add_program(m12, '4', Color.GREEN)
+    await add_program(m1m2, '5', Color.GREEN)
+    await add_program(m3m4, '6', Color.GREEN)
+    await add_program(m14, '7', Color.GREEN)
+    # await add_program(run8, '8', Color.GREEN)
+    # await add_program(run9, '9', Color.GREEN)
     await add_program(push_measurements, 'P', Color.BLUE)
     await add_program(left_attach_measurements, 'L', Color.BLUE)
     await add_program(right_attach_measurements, 'R', Color.BLUE)

@@ -15,7 +15,7 @@ from pybricks.parameters import Button, Direction, Port
 from pybricks.tools import wait, StopWatch
 
 
-Robot_name = 'Lincoln'
+Robot_name = 'Luke'
 
 
 # ---------- Begin Allow Missing Motors ----------
@@ -62,11 +62,11 @@ elif Robot_name == 'Aaron':
     DRIVE_RIGHT = Motor(Port.C, Direction.CLOCKWISE)
     LEFT_ATTACHMENT = Motor(Port.F, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.D, Direction.CLOCKWISE)
-elif Robot_name == 'Lincoln':
+elif Robot_name == 'V':
     DRIVE_LEFT = Motor(Port.F, Direction.COUNTERCLOCKWISE)
     DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
-    LEFT_ATTACHMENT = Motor(Port.B, Direction.CLOCKWISE)
-    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+    # LEFT_ATTACHMENT = Motor(Port.B, Direction.CLOCKWISE)
+    # RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
 
 motorLeft = DRIVE_LEFT
 motorRight = DRIVE_RIGHT
