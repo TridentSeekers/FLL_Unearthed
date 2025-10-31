@@ -194,5 +194,5 @@ cython_debug/
 .cursorindexingignore
 
 # Robot settings
-.robotName
-robot_config.py
+# .robotName
+# robot_config.py
