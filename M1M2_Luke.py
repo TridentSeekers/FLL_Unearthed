@@ -1,12 +1,19 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait, StopWatch
-
+from library import set_drivebase
 from robot_config import DRIVE_BASE, HUB, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 
 
 async def m1m2():
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
+    SPEED = 550
+    ACCELERATION = 350
+    TURN_SPEED = 150
+    TURN_ACCELERATION = 150
+    await set_drivebase()
+    DRIVE_BASE.reset(distance=0, angle=0)
+    DRIVE_BASE.use_gyro(True)
 
     combined=0
     if (combined ==1):
@@ -46,7 +53,7 @@ async def m1m2():
         await DRIVE_BASE.straight(-200)
         DRIVE_BASE.reset(angle=0)
         await DRIVE_BASE.turn(-30)
-        await DRIVE_BASE.straight(75)
+        await DRIVE_BASE.straight(70)
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_angle(40, -80)
         await DRIVE_BASE.curve(-260,-160)

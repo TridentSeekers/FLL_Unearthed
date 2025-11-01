@@ -1,48 +1,45 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait, StopWatch
-
+from library import set_drivebase
 from robot_config import DRIVE_BASE, HUB, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 
 
 async def m910():
+    SPEED = 550
+    ACCELERATION = 350
+    TURN_SPEED = 150
+    TURN_ACCELERATION = 150
+    await set_drivebase()
+    DRIVE_BASE.reset(distance=0, angle=0)
+    DRIVE_BASE.use_gyro(True)
+
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
-    # DRIVE_BASE.reset(distance=0)
-    DRIVE_BASE.straight(30)
-    # wait(500)
-    # LEFT_ATTACHMENT.reset_angle(0)
-    # LEFT_ATTACHMENT.run_target(200, -60)
-    # wait(500)
+    DRIVE_BASE.reset(distance=0)
+    await DRIVE_BASE.straight(15)
     DRIVE_BASE.reset(angle=0) #need
-    DRIVE_BASE.turn(-43)#need
-
-    # DRIVE_BASE.reset(distance=0)
-    DRIVE_BASE.straight(485) #need
-    # wait(500)
+    await DRIVE_BASE.turn(-42)#need
+    await DRIVE_BASE.straight(510) #need
     LEFT_ATTACHMENT.reset_angle(0) #need
-    LEFT_ATTACHMENT.run_angle(500, -80) #need
-    # wait(100)
-    # LEFT_ATTACHMENT.reset_angle(0)
-    # LEFT_ATTACHMENT.run_target(1000,-180)
+    await LEFT_ATTACHMENT.run_angle(200, -80) #need
+    LEFT_ATTACHMENT.reset_angle(0)
+    await LEFT_ATTACHMENT.run_target(200, 30)
+    # await wait(500)
+    RIGHT_ATTACHMENT.reset_angle(0) #need
+    await RIGHT_ATTACHMENT.run_target(1000,2450) #need
+    # await wait(500)
+    await DRIVE_BASE.straight(60) #need
     # wait(500)
     LEFT_ATTACHMENT.reset_angle(0)
-    LEFT_ATTACHMENT.run_target(200, 30)
-    wait(500)
-    RIGHT_ATTACHMENT.reset_angle(0) #need
-    RIGHT_ATTACHMENT.run_target(1000,2450) #need
-    wait(500)
-    DRIVE_BASE.straight(60) #need
-    wait(500)
-    LEFT_ATTACHMENT.reset_angle(0)
-    LEFT_ATTACHMENT.run_target(700, 300)
-    wait(500)
-    DRIVE_BASE.straight(-205)
+    await LEFT_ATTACHMENT.run_target(700, 300)
+    # wait(500)
+    await DRIVE_BASE.straight(-215)
     RIGHT_ATTACHMENT.reset_angle(0)
-    RIGHT_ATTACHMENT.run_target(1000, -500)
-    wait(500)
-    DRIVE_BASE.straight(70)
-    wait(500)
+    await RIGHT_ATTACHMENT.run_target(1000, -500)
+    # wait(500)
+    await DRIVE_BASE.straight(70)
+    # wait(500)
     RIGHT_ATTACHMENT.reset_angle(0)
-    RIGHT_ATTACHMENT.run_target(1000,-1550)
-    wait(100)
-    DRIVE_BASE.curve(-500, 60)
+    await RIGHT_ATTACHMENT.run_target(1000,-1550)
+    # wait(100)
+    await DRIVE_BASE.curve(-500, 60)

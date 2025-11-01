@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 
 #'Daniel', 'Luke', 'Joy','Aaron', 'Lincoln'
 # Set the robot name to match the configuration in robot_config.py  
-Robot_name = 'Daniel'
+Robot_name = 'Luke'
 # Set up all devices.
 # X: Positive means forward. Negative means backward.
 # Y: Positive means to the left. Negative means to the right.
@@ -61,10 +61,10 @@ elif Robot_name == 'V':
     RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
 
 # Initialize variables.
-SPEED = 620
-ACCELERATION = 600
-TURN_SPEED = 400
-TURN_ACCELERATION = 500
+SPEED = 550
+ACCELERATION = 350
+TURN_SPEED = 150
+TURN_ACCELERATION = 150
 MANUAL_MOTOR_SPEED = 250 # Speed for manual motor control
 
 
