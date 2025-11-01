@@ -41,5 +41,5 @@ async def m3m4():
         DRIVE_BASE.settings(straight_acceleration=600)
         await DRIVE_BASE.turn(-70)
         await DRIVE_BASE.straight(-800)
-
+    DRIVE_BASE.use_gyro(False)
 

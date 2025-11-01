@@ -12,15 +12,15 @@ async def m14():
     await set_drivebase()
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
-    
+
     # The main program starts here.
     DRIVE_BASE.settings(straight_speed=850)
     await DRIVE_BASE.straight(295)
     DRIVE_BASE.settings(turn_rate=50)
-    await DRIVE_BASE.turn(65)
+    await DRIVE_BASE.turn(60)
     await DRIVE_BASE.straight(250)
     await DRIVE_BASE.straight(-150)
-    await DRIVE_BASE.turn(-65)
+    await DRIVE_BASE.turn(-60)
     await DRIVE_BASE.straight(265)
-    HUB.light.on(Color.GREEN)
 
+    DRIVE_BASE.use_gyro(False)

@@ -42,34 +42,34 @@ async def m5678():
 
         for i in range(2):
             LEFT_ATTACHMENT.reset_angle(0) #need
-            await LEFT_ATTACHMENT.run_target(1000,130)
+            await LEFT_ATTACHMENT.run_target(1200,130)
             wait(200)            
             LEFT_ATTACHMENT.reset_angle(0) #need
             await LEFT_ATTACHMENT.run_target(1000,-130)
         LEFT_ATTACHMENT.reset_angle(0) #need
-        await LEFT_ATTACHMENT.run_target(1000,170)
+        await LEFT_ATTACHMENT.run_target(1200,170)
         DRIVE_BASE.reset(angle=0)
         await DRIVE_BASE.turn(-90)
         await DRIVE_BASE.straight(210)
         DRIVE_BASE.reset(angle=0)
-        await DRIVE_BASE.turn(100)
-        await DRIVE_BASE.straight(340)
+        await DRIVE_BASE.turn(97)
+        await DRIVE_BASE.straight(357)
         # LEFT_ATTACHMENT.reset_angle(0) #need
         # await LEFT_ATTACHMENT.run_target(1000,130)
         DRIVE_BASE.reset(angle=0)
         await DRIVE_BASE.turn(-47)
         await DRIVE_BASE.turn(15)
-        await DRIVE_BASE.straight(-95)
+        await DRIVE_BASE.straight(-85)
         await DRIVE_BASE.turn(80)
         await DRIVE_BASE.straight(55)
         LEFT_ATTACHMENT.reset_angle(0)
-        await LEFT_ATTACHMENT.run_target(700, -20)
-        await DRIVE_BASE.turn(-60)
+        await LEFT_ATTACHMENT.run_target(700, -30)
+        await DRIVE_BASE.turn(-70)
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_target(700, 75)
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_target(700, -105)
-        await DRIVE_BASE.turn(40)
+        await DRIVE_BASE.turn(50)
         RIGHT_ATTACHMENT.reset_angle(0)
         await RIGHT_ATTACHMENT.run_target(1000, -150)
         await DRIVE_BASE.straight(87)
@@ -78,15 +78,16 @@ async def m5678():
         await DRIVE_BASE.straight(-100)
         await DRIVE_BASE.turn(43)
         await DRIVE_BASE.straight(400)
-        await DRIVE_BASE.straight(-430)
-        await DRIVE_BASE.turn(-100)
+        await DRIVE_BASE.straight(-400)
+        await DRIVE_BASE.turn(-80)
         await DRIVE_BASE.straight(-700)
     else:
         # # LEFT_ATTACHMENT.reset_angle(0) #need
         # # await LEFT_ATTACHMENT.run_target(1000,-10)
         # # DRIVE_BASE.reset(angle=0)
         await DRIVE_BASE.turn(-30)
-        
+    
+    DRIVE_BASE.use_gyro(False)    
         
 
 

@@ -57,4 +57,8 @@ async def m1m2():
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_angle(40, -80)
         await DRIVE_BASE.curve(-260,-160)
-
+        DRIVE_BASE.use_gyro(False)
+        # DRIVE_BASE.reset(distance=0, angle=0)
+        # await DRIVE_BASE.turn(150)
+        # await DRIVE_BASE.straight(-150)
+    

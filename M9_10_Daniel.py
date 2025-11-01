@@ -43,3 +43,4 @@ async def m910():
     await RIGHT_ATTACHMENT.run_target(1000,-1550)
     # wait(100)
     await DRIVE_BASE.curve(-500, 60)
+    DRIVE_BASE.use_gyro(False)

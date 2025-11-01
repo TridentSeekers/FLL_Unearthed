@@ -57,12 +57,12 @@ elif Robot_name == 'V':
     DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
     DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=130)
     # The axle track is the distance between the two drive wheels.
-    LEFT_ATTACHMENT = Motor(Port.B, Direction.CLOCKWISE)
-    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+    LEFT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.B, Direction.CLOCKWISE)
 
 # Initialize variables.
-SPEED = 550
-ACCELERATION = 350
+SPEED = 650
+ACCELERATION = 650
 TURN_SPEED = 150
 TURN_ACCELERATION = 150
 MANUAL_MOTOR_SPEED = 250 # Speed for manual motor control
