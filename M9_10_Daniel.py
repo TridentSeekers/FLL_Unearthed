@@ -15,32 +15,37 @@ async def m910():
 
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
-    DRIVE_BASE.reset(distance=0)
-    await DRIVE_BASE.straight(15)
-    DRIVE_BASE.reset(angle=0) #need
-    await DRIVE_BASE.turn(-42)#need
-    await DRIVE_BASE.straight(510) #need
-    LEFT_ATTACHMENT.reset_angle(0) #need
-    await LEFT_ATTACHMENT.run_angle(200, -80) #need
-    LEFT_ATTACHMENT.reset_angle(0)
-    await LEFT_ATTACHMENT.run_target(200, 30)
-    # await wait(500)
-    RIGHT_ATTACHMENT.reset_angle(0) #need
-    await RIGHT_ATTACHMENT.run_target(1000,2450) #need
-    # await wait(500)
-    await DRIVE_BASE.straight(60) #need
-    # wait(500)
-    LEFT_ATTACHMENT.reset_angle(0)
-    await LEFT_ATTACHMENT.run_target(700, 300)
-    # wait(500)
-    await DRIVE_BASE.straight(-215)
-    RIGHT_ATTACHMENT.reset_angle(0)
-    await RIGHT_ATTACHMENT.run_target(1000, -500)
-    # wait(500)
-    await DRIVE_BASE.straight(70)
-    # wait(500)
-    RIGHT_ATTACHMENT.reset_angle(0)
-    await RIGHT_ATTACHMENT.run_target(1000,-1550)
-    # wait(100)
-    await DRIVE_BASE.curve(-500, 60)
+    combined=1
+    if combined==1:
+        await DRIVE_BASE.straight(15)
+
+        await DRIVE_BASE.turn(-42)#need
+        await DRIVE_BASE.straight(500) #need
+        LEFT_ATTACHMENT.reset_angle(0) #need
+        await LEFT_ATTACHMENT.run_angle(100, -50) #need
+        LEFT_ATTACHMENT.reset_angle(0)
+        await LEFT_ATTACHMENT.run_target(100, 30)
+        # await wait(500)
+        RIGHT_ATTACHMENT.reset_angle(0) #need
+        await RIGHT_ATTACHMENT.run_target(1000,2450) #need
+        # await wait(500)
+        await DRIVE_BASE.straight(60) #need
+        # wait(500)
+        LEFT_ATTACHMENT.reset_angle(0)
+        await LEFT_ATTACHMENT.run_target(100, 100)
+        # wait(500)
+        await DRIVE_BASE.straight(-215)
+        RIGHT_ATTACHMENT.reset_angle(0)
+        await RIGHT_ATTACHMENT.run_target(1000, -500)
+        # wait(500)
+        await DRIVE_BASE.straight(70)
+        # wait(500)
+        RIGHT_ATTACHMENT.reset_angle(0)
+        await RIGHT_ATTACHMENT.run_target(1000,-1550)
+        # wait(100)
+        await DRIVE_BASE.curve(-500, 60)
+        
+    else:
+        await RIGHT_ATTACHMENT.run_target(600,2450) #need
+
     DRIVE_BASE.use_gyro(False)
