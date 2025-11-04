@@ -29,9 +29,12 @@ async def m5678():
 
     SPEED = 550
     ACCELERATION = 550
-    TURN_SPEED = 450
-    TURN_ACCELERATION = 150
-    await set_drivebase()
+    TURN_SPEED = 400
+    TURN_ACCELERATION = 200
+    DRIVE_BASE.settings(straight_speed=SPEED)
+    DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+    DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+    DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
     watch = StopWatch()
@@ -49,15 +52,15 @@ async def m5678():
             await LEFT_ATTACHMENT.run_target(1000,-130)
         LEFT_ATTACHMENT.reset_angle(0) #need
         await LEFT_ATTACHMENT.run_target(1200,170)
-        DRIVE_BASE.reset(angle=0)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-90)
         await DRIVE_BASE.straight(210)
-        DRIVE_BASE.reset(angle=0)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(97)
         await DRIVE_BASE.straight(357)
         # LEFT_ATTACHMENT.reset_angle(0) #need
         # await LEFT_ATTACHMENT.run_target(1000,130)
-        DRIVE_BASE.reset(angle=0)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-47)
         await DRIVE_BASE.turn(15)
         await DRIVE_BASE.straight(-85)
@@ -92,50 +95,43 @@ async def m5678():
             LEFT_ATTACHMENT.reset_angle(0) #need
             await LEFT_ATTACHMENT.run_target(1000,-130)
         LEFT_ATTACHMENT.reset_angle(0) #need
-        await LEFT_ATTACHMENT.run_target(1200,170)
-        DRIVE_BASE.reset(angle=0)
+        await LEFT_ATTACHMENT.run_target(1200,130)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-90)
         # Go to M5
-        await DRIVE_BASE.straight(200)
-        DRIVE_BASE.reset(angle=0)
-        await DRIVE_BASE.turn(95)
-        await DRIVE_BASE.straight(355)
+        await DRIVE_BASE.straight(180)
+        DRIVE_BASE.reset(distance=0, angle=0)
+        await DRIVE_BASE.turn(93)
+        await DRIVE_BASE.straight(345)
         # Turn left to finish M5
-        DRIVE_BASE.reset(angle=0)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-55)
+        LEFT_ATTACHMENT.reset_angle(0)
+        await multitask(LEFT_ATTACHMENT.run_target(600, -150),DRIVE_BASE.turn(55))
+        DRIVE_BASE.reset(distance=0, angle=0)
+        await DRIVE_BASE.straight(49)
+        await DRIVE_BASE.turn(50)
         
-        await multitask(LEFT_ATTACHMENT.run_target(200, -75),DRIVE_BASE.turn(46))
+        RIGHT_ATTACHMENT.reset_angle(0)
+        await RIGHT_ATTACHMENT.run_target(500, -150)
         await DRIVE_BASE.straight(40)
-        DRIVE_BASE.reset(angle=0)
-        await DRIVE_BASE.turn(55)
-        # LEFT_ATTACHMENT.reset_angle(0)
-        # # LEFT_ATTACHMENT.run_target(200, -20)
-        
-        # await multitask(LEFT_ATTACHMENT.run_target(200, -45),DRIVE_BASE.straight(30))
-        # # await DRIVE_BASE.straight(25)
-        # # LEFT_ATTACHMENT.reset_angle(0)
-        # # # await LEFT_ATTACHMENT.run_target(700, -45)
-        
-        # await DRIVE_BASE.turn(-75)
-        # # await multitask(LEFT_ATTACHMENT.run_target(700, -45),DRIVE_BASE.turn(-85))
-
-        # LEFT_ATTACHMENT.reset_angle(0)
-        # # # await LEFT_ATTACHMENT.run_target(700, 75)
-        # # LEFT_ATTACHMENT.reset_angle(0)
-        # await multitask(LEFT_ATTACHMENT.run_target(300, -105),DRIVE_BASE.turn(75))
-        # # await LEFT_ATTACHMENT.run_target(700, -105)
-        # # await DRIVE_BASE.turn(50)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_target(1000, -150)
-        await DRIVE_BASE.straight(90)
-        RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_target(500, 300)
+        await RIGHT_ATTACHMENT.run_target(500, 150)
         await DRIVE_BASE.straight(-160)
         await DRIVE_BASE.turn(40)
         await DRIVE_BASE.straight(400)
         await DRIVE_BASE.straight(-300)
+        SPEED = 850
+        ACCELERATION = 850
+        TURN_SPEED = 550
+        TURN_ACCELERATION = 550
+        DRIVE_BASE.settings(straight_speed=SPEED)
+        DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+        DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+        DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-100)
-        await DRIVE_BASE.straight(-700)
+        await DRIVE_BASE.straight(-650)
     
     DRIVE_BASE.use_gyro(False)    
     time2 = watch.time() 

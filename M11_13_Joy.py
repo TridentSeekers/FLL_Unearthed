@@ -7,16 +7,18 @@ from robot_config import DRIVE_BASE, HUB, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 async def m11_13():
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
-    SPEED = 650
+    SPEED = 700
     ACCELERATION = 650
-    TURN_SPEED = 350
-    TURN_ACCELERATION = 350
+    TURN_SPEED = 700
+    TURN_ACCELERATION = 650
     DRIVE_BASE.settings(straight_speed=SPEED)
     DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
     DRIVE_BASE.settings(turn_rate=TURN_SPEED)
     DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
+    watch = StopWatch()
+    time1 = watch.time()
 
     await DRIVE_BASE.straight(790)
     await DRIVE_BASE.turn(-60)
@@ -37,5 +39,7 @@ async def m11_13():
     await DRIVE_BASE.turn(40)
     await DRIVE_BASE.straight(-100)
     await DRIVE_BASE.turn(80)
-    await DRIVE_BASE.straight(-800)
-    await DRIVE_BASE.use_gyro(False)
+    await DRIVE_BASE.straight(-600)
+    DRIVE_BASE.use_gyro(False)
+    time2 = watch.time() 
+    print(f"Time to finish: {time2 - time1} ms")

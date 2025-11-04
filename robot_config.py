@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 
 #'Daniel', 'Luke', 'Joy','Aaron', 'Lincoln'
 # Set the robot name to match the configuration in robot_config.py  
-Robot_name = 'Luke'
+Robot_name = 'Daniel'
 # Set up all devices.
 # X: Positive means forward. Negative means backward.
 # Y: Positive means to the left. Negative means to the right.

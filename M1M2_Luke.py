@@ -11,7 +11,10 @@ async def m1m2():
     ACCELERATION = 350
     TURN_SPEED = 150
     TURN_ACCELERATION = 150
-    await set_drivebase()
+    DRIVE_BASE.settings(straight_speed=SPEED)
+    DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+    DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+    DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
 
