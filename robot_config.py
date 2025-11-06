@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 
 #'Daniel', 'Luke', 'Joy','Aaron', 'Lincoln'
 # Set the robot name to match the configuration in robot_config.py  
-Robot_name = 'Daniel'
+Robot_name = 'Luke'
 # Set up all devices.
 # X: Positive means forward. Negative means backward.
 # Y: Positive means to the left. Negative means to the right.
@@ -23,7 +23,7 @@ elif Robot_name == 'Luke':
     HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
     DRIVE_LEFT = Motor(Port.D, Direction.COUNTERCLOCKWISE)
     DRIVE_RIGHT = Motor(Port.E, Direction.CLOCKWISE)
-    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.3, axle_track=140)
+    DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, wheel_diameter=61.2, axle_track=140)
     # The axle track is the distance between the two drive wheels.
     LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
@@ -63,8 +63,8 @@ elif Robot_name == 'V':
 # Initialize variables.
 SPEED = 650
 ACCELERATION = 650
-TURN_SPEED = 150
-TURN_ACCELERATION = 150
+TURN_SPEED = 200
+TURN_ACCELERATION = 200
 MANUAL_MOTOR_SPEED = 250 # Speed for manual motor control
 
 

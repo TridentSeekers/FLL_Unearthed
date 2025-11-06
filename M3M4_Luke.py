@@ -27,22 +27,33 @@ async def m3m4():
 
     else:
         
-        await DRIVE_BASE.straight(765)
+        await DRIVE_BASE.straight(767)
         await DRIVE_BASE.turn(82)
         DRIVE_BASE.settings(straight_speed=100)
         DRIVE_BASE.settings(straight_acceleration=100)
         DRIVE_BASE.reset(distance=0, angle=0)
-        await DRIVE_BASE.straight(190)
+        await DRIVE_BASE.straight(195)
         RIGHT_ATTACHMENT.reset_angle(0)
         await RIGHT_ATTACHMENT.run_target(800, 700)
         LEFT_ATTACHMENT.reset_angle(0)
-        await LEFT_ATTACHMENT.run_target(70, -25)
+        await LEFT_ATTACHMENT.run_target(70, -30)
         await DRIVE_BASE.straight(-180)
         DRIVE_BASE.reset(distance=0, angle=0)
-
-        DRIVE_BASE.settings(straight_speed=600)
-        DRIVE_BASE.settings(straight_acceleration=600)
+        watch = StopWatch()
+        time1 = watch.time() 
+        SPEED = 850
+        ACCELERATION = 850
+        TURN_SPEED = 550
+        TURN_ACCELERATION = 550
+        DRIVE_BASE.settings(straight_speed=SPEED)
+        DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+        DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+        DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+        DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-70)
         await DRIVE_BASE.straight(-800)
     DRIVE_BASE.use_gyro(False)
+ 
+    time2 = watch.time() 
+    print(f"Time to finish: {time2 - time1} ms")
 

@@ -37,6 +37,15 @@ async def m11_13():
     # await multitask(RIGHT_ATTACHMENT.run_target(600,500),DRIVE_BASE.turn(40))
     await RIGHT_ATTACHMENT.run_target(600,600)
     await DRIVE_BASE.turn(40)
+    SPEED = 850
+    ACCELERATION = 850
+    TURN_SPEED = 550
+    TURN_ACCELERATION = 550
+    DRIVE_BASE.settings(straight_speed=SPEED)
+    DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+    DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+    DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+    DRIVE_BASE.reset(distance=0, angle=0)
     await DRIVE_BASE.straight(-100)
     await DRIVE_BASE.turn(80)
     await DRIVE_BASE.straight(-600)
