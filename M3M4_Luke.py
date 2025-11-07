@@ -32,9 +32,9 @@ async def m3m4():
         DRIVE_BASE.settings(straight_speed=100)
         DRIVE_BASE.settings(straight_acceleration=100)
         DRIVE_BASE.reset(distance=0, angle=0)
-        await DRIVE_BASE.straight(195)
+        await DRIVE_BASE.straight(202)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_target(800, 700)
+        await RIGHT_ATTACHMENT.run_target(900, 700)
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_target(70, -30)
         await DRIVE_BASE.straight(-180)
@@ -56,4 +56,3 @@ async def m3m4():
  
     time2 = watch.time() 
     print(f"Time to finish: {time2 - time1} ms")
-

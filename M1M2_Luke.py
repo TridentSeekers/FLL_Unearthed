@@ -7,17 +7,18 @@ from robot_config import DRIVE_BASE, HUB, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 async def m1m2():
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
-    SPEED = 550
-    ACCELERATION = 350
-    TURN_SPEED = 150
-    TURN_ACCELERATION = 150
+    SPEED = 850
+    ACCELERATION = 850
+    TURN_SPEED = 550
+    TURN_ACCELERATION = 550
     DRIVE_BASE.settings(straight_speed=SPEED)
     DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
     DRIVE_BASE.settings(turn_rate=TURN_SPEED)
     DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
-
+    watch = StopWatch()
+    time1 = watch.time()
     combined=0
     if (combined ==1):
         #Go forward to Mission 1
@@ -52,16 +53,19 @@ async def m1m2():
         await DRIVE_BASE.turn(-42)
         await DRIVE_BASE.straight(210)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_angle(150, -250)
+        await RIGHT_ATTACHMENT.run_angle(200, -250)
         await DRIVE_BASE.straight(-200)
         DRIVE_BASE.reset(angle=0)
         await DRIVE_BASE.turn(-30)
-        await DRIVE_BASE.straight(80)
+        await DRIVE_BASE.straight(75)
         LEFT_ATTACHMENT.reset_angle(0)
-        await LEFT_ATTACHMENT.run_target(40, -60)
+        await LEFT_ATTACHMENT.run_target(100, -70)
+        
         await DRIVE_BASE.curve(-260,-160)
         DRIVE_BASE.use_gyro(False)
         # DRIVE_BASE.reset(distance=0, angle=0)
         # await DRIVE_BASE.turn(150)
         # await DRIVE_BASE.straight(-150)
-    
+
+    time2 = watch.time() 
+    print(f"Time to finish: {time2 - time1} ms")
