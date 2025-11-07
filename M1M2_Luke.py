@@ -23,7 +23,7 @@ async def m1m2():
     if (combined ==1):
         #Go forward to Mission 1
         await DRIVE_BASE.straight(700)
-        await DRIVE_BASE.straight(-140)
+        await DRIVE_BASE.straight(-141)
         await DRIVE_BASE.straight(100)
         #Turn and Go forward to Mission 2
         DRIVE_BASE.reset(angle=0)
@@ -48,20 +48,22 @@ async def m1m2():
         await DRIVE_BASE.straight(600)
 
     else:
-        await DRIVE_BASE.straight(650)
+        await DRIVE_BASE.straight(645)
         DRIVE_BASE.reset(angle=0)
-        await DRIVE_BASE.turn(-42)
+        await DRIVE_BASE.turn(-44)
         await DRIVE_BASE.straight(210)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_angle(200, -250)
+        await RIGHT_ATTACHMENT.run_angle(230, -250)
         await DRIVE_BASE.straight(-200)
         DRIVE_BASE.reset(angle=0)
-        await DRIVE_BASE.turn(-30)
-        await DRIVE_BASE.straight(75)
+        await DRIVE_BASE.turn(-33)
+        await DRIVE_BASE.straight(79)
         LEFT_ATTACHMENT.reset_angle(0)
-        await LEFT_ATTACHMENT.run_target(100, -70)
+        await LEFT_ATTACHMENT.run_target(150, -100)
         
-        await DRIVE_BASE.curve(-260,-160)
+        # await DRIVE_BASE.curve(-250,-160)
+        await DRIVE_BASE.turn(75)
+        await DRIVE_BASE.straight(-600)
         DRIVE_BASE.use_gyro(False)
         # DRIVE_BASE.reset(distance=0, angle=0)
         # await DRIVE_BASE.turn(150)

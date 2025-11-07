@@ -55,8 +55,7 @@ async def main():
     await add_program(m1m2, '5', Color.GREEN)
     await add_program(m3m4, '6', Color.GREEN)
     await add_program(m14, '7', Color.GREEN)
-    # await add_program(run8, '8', Color.GREEN)
-    # await add_program(run9, '9', Color.GREEN)
+
     await add_program(push_measurements, 'P', Color.BLUE)
     await add_program(left_attach_measurements, 'L', Color.BLUE)
     await add_program(right_attach_measurements, 'R', Color.BLUE)

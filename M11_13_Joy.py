@@ -7,9 +7,9 @@ from robot_config import DRIVE_BASE, HUB, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 async def m11_13():
     await HUB.speaker.beep()
     HUB.light.on(Color.YELLOW)
-    SPEED = 700
+    SPEED = 450
     ACCELERATION = 650
-    TURN_SPEED = 700
+    TURN_SPEED = 450
     TURN_ACCELERATION = 650
     DRIVE_BASE.settings(straight_speed=SPEED)
     DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
@@ -20,17 +20,17 @@ async def m11_13():
     watch = StopWatch()
     time1 = watch.time()
 
-    await DRIVE_BASE.straight(790)
+    await DRIVE_BASE.straight(820)
     await DRIVE_BASE.turn(-60)
-    await DRIVE_BASE.straight(87)
-    await DRIVE_BASE.turn(-27)
+    await DRIVE_BASE.straight(95)
+    await DRIVE_BASE.turn(-35)
     LEFT_ATTACHMENT.reset_angle(0)
     await LEFT_ATTACHMENT.run_target(1000, -800)
     await DRIVE_BASE.turn(20)
     
-    await DRIVE_BASE.straight(-120)
+    await DRIVE_BASE.straight(-110)
     RIGHT_ATTACHMENT.reset_angle(0)
-    await multitask(RIGHT_ATTACHMENT.run_target(1000,-800),DRIVE_BASE.turn(99))
+    await multitask(RIGHT_ATTACHMENT.run_target(1000,-800),DRIVE_BASE.turn(120))
     await DRIVE_BASE.straight(350)
    
     RIGHT_ATTACHMENT.reset_angle(0)
