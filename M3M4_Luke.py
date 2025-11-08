@@ -51,8 +51,9 @@ async def m3m4():
         DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
         DRIVE_BASE.reset(distance=0, angle=0)
         await DRIVE_BASE.turn(-70)
+        DRIVE_BASE.use_gyro(False)
         await DRIVE_BASE.straight(-800)
-    DRIVE_BASE.use_gyro(False)
+    
  
     time2 = watch.time() 
     print(f"Time to finish: {time2 - time1} ms")

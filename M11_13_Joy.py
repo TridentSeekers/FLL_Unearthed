@@ -20,17 +20,17 @@ async def m11_13():
     watch = StopWatch()
     time1 = watch.time()
 
-    await DRIVE_BASE.straight(820)
-    await DRIVE_BASE.turn(-60)
+    await DRIVE_BASE.straight(800)
+    await DRIVE_BASE.turn(-65)
     await DRIVE_BASE.straight(95)
     await DRIVE_BASE.turn(-35)
     LEFT_ATTACHMENT.reset_angle(0)
     await LEFT_ATTACHMENT.run_target(1000, -800)
-    await DRIVE_BASE.turn(20)
+    await DRIVE_BASE.turn(30)
     
     await DRIVE_BASE.straight(-110)
     RIGHT_ATTACHMENT.reset_angle(0)
-    await multitask(RIGHT_ATTACHMENT.run_target(1000,-800),DRIVE_BASE.turn(120))
+    await multitask(RIGHT_ATTACHMENT.run_target(1000,-800),DRIVE_BASE.turn(110))
     await DRIVE_BASE.straight(350)
    
     RIGHT_ATTACHMENT.reset_angle(0)
@@ -48,7 +48,8 @@ async def m11_13():
     DRIVE_BASE.reset(distance=0, angle=0)
     await DRIVE_BASE.straight(-100)
     await DRIVE_BASE.turn(80)
-    await DRIVE_BASE.straight(-600)
     DRIVE_BASE.use_gyro(False)
+    await DRIVE_BASE.straight(-600)
+
     time2 = watch.time() 
     print(f"Time to finish: {time2 - time1} ms")

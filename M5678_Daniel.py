@@ -140,9 +140,10 @@ async def m5678():
         await DRIVE_BASE.straight(420)
         await DRIVE_BASE.straight(-330)
         await DRIVE_BASE.turn(-92)
+        DRIVE_BASE.use_gyro(False)
         await DRIVE_BASE.straight(-650)
     
-    DRIVE_BASE.use_gyro(False)    
+    
     time2 = watch.time() 
     print(f"Time to finish: {time2 - time1} ms")
 

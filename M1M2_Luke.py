@@ -63,8 +63,9 @@ async def m1m2():
         
         # await DRIVE_BASE.curve(-250,-160)
         await DRIVE_BASE.turn(75)
-        await DRIVE_BASE.straight(-600)
         DRIVE_BASE.use_gyro(False)
+        await DRIVE_BASE.straight(-600)
+
         # DRIVE_BASE.reset(distance=0, angle=0)
         # await DRIVE_BASE.turn(150)
         # await DRIVE_BASE.straight(-150)
