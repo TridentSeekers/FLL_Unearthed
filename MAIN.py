@@ -1,5 +1,6 @@
 # Appreciate https://github.com/MonongahelaCryptidCooperative/FLL-2025-2026
 # The code is modified for Trident Seekers' robots.
+import M1M2_Vincent
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 from measurements import left_attach_measurements, push_measurements, right_attach_measurements
@@ -13,8 +14,8 @@ from M3M4_Luke import m3m4
 from M1M2_Luke import m1m2
 from m14_lincoln import m14
 from m12_aaron import m12
-
-
+from M7testforrun_until_stalled import m7
+from M1M2_Vincent import m1m2 as M1M2_Vincent
 from text_library import print_drivebase_settings, print_battery_level
 from ui import add_program, user_interface
 
@@ -55,6 +56,8 @@ async def main():
     await add_program(m1m2, '5', Color.GREEN)
     await add_program(m3m4, '6', Color.GREEN)
     await add_program(m14, '7', Color.GREEN)
+    await add_program(m7, '8', Color.GREEN)
+    await add_program(M1M2_Vincent, '9', Color.GREEN)
 
     await add_program(push_measurements, 'P', Color.BLUE)
     await add_program(left_attach_measurements, 'L', Color.BLUE)

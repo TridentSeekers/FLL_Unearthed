@@ -30,7 +30,7 @@ async def m910():
         await LEFT_ATTACHMENT.run_target(100, 30)
         # await wait(500)
         RIGHT_ATTACHMENT.reset_angle(0) #need
-        await RIGHT_ATTACHMENT.run_target(1000,2450) #need
+        await RIGHT_ATTACHMENT.run_target(1000,3000) #need
         # await wait(500)
         await DRIVE_BASE.straight(60) #need
         # wait(500)
@@ -39,12 +39,12 @@ async def m910():
         # wait(500)
         await DRIVE_BASE.straight(-215)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_target(1000, -500)
+        await RIGHT_ATTACHMENT.run_target(2000, -1500)
         # wait(500)
         await DRIVE_BASE.straight(70)
         # wait(500)
         RIGHT_ATTACHMENT.reset_angle(0)
-        await RIGHT_ATTACHMENT.run_target(1000,-1550)
+        await RIGHT_ATTACHMENT.run_target(1000,-1750)
         # wait(100)
         DRIVE_BASE.use_gyro(False)
         await DRIVE_BASE.curve(-500, 60)
