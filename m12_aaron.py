@@ -23,5 +23,4 @@ async def m12():
     wait(50)
     await RIGHT_ATTACHMENT.run_angle(300, 80)
     await RIGHT_ATTACHMENT.run_angle(350, -250)
-    DRIVE_BASE.use_gyro(False)
     await DRIVE_BASE.straight(-500)
