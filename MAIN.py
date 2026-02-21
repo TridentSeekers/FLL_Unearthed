@@ -9,7 +9,7 @@ from library import set_drivebase, battery_percentage
 from RUN_TEST import run_test
 from M5678_Daniel import m5678
 from M9_10_Daniel import m910
-from M11_13_Joy import m11_13
+from M11_13_Chen import m11_13
 from M3M4_Luke import m3m4
 from M1M2_Luke import m1m2
 from m14_lincoln import m14
@@ -18,6 +18,8 @@ from M7testforrun_until_stalled import m7
 from M1M2_Vincent import m1m2 as M1M2_Vincent
 from text_library import print_drivebase_settings, print_battery_level
 from ui import add_program, user_interface
+from M567_VincentAndDaniel import m567
+from M3M14_Daniel import m3m14
 
 async def main():
     
@@ -49,15 +51,17 @@ async def main():
     # below
     #await add_program(print_battery_level, 'B', Color.WHITE)
     await add_program(run_test, 'T', Color.WHITE)
-    await add_program(m910, '1', Color.GREEN)
+    await add_program(m910, "0", Color.GREEN)
+    await add_program(m567, '1', Color.GREEN)
     await add_program(m5678, '2', Color.GREEN)
     await add_program(m11_13, '3', Color.GREEN)
-    await add_program(m12, '4', Color.GREEN)
-    await add_program(m1m2, '5', Color.GREEN)
-    await add_program(m3m4, '6', Color.GREEN)
-    await add_program(m14, '7', Color.GREEN)
-    await add_program(m7, '8', Color.GREEN)
-    await add_program(M1M2_Vincent, '9', Color.GREEN)
+    await add_program(M1M2_Vincent, '4', Color.GREEN)
+    await add_program(m12, '5', Color.GREEN)
+    await add_program(m3m14, '6', Color.GREEN)
+    # await add_program(m14, '7', Color.GREEN)
+    # await add_program(m3m14, '7', Color.GREEN)
+    # await add_program(m7, '8', Color.GREEN)
+    # await add_program(m1m2, '9', Color.GREEN)
 
     await add_program(push_measurements, 'P', Color.BLUE)
     await add_program(left_attach_measurements, 'L', Color.BLUE)

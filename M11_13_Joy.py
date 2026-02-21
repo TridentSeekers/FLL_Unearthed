@@ -9,8 +9,8 @@ async def m11_13():
     HUB.light.on(Color.YELLOW)
     SPEED = 450
     ACCELERATION = 650
-    TURN_SPEED = 450
-    TURN_ACCELERATION = 650
+    TURN_SPEED = 200
+    TURN_ACCELERATION = 450
     DRIVE_BASE.settings(straight_speed=SPEED)
     DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
     DRIVE_BASE.settings(turn_rate=TURN_SPEED)
@@ -20,36 +20,67 @@ async def m11_13():
     watch = StopWatch()
     time1 = watch.time()
 
-    await DRIVE_BASE.straight(800)
-    await DRIVE_BASE.turn(-65)
-    await DRIVE_BASE.straight(95)
-    await DRIVE_BASE.turn(-35)
+    await DRIVE_BASE.turn(5)
+    await DRIVE_BASE.straight(815)
+    await DRIVE_BASE.turn(-75) #it was -72
+    DRIVE_BASE.reset(angle=0)
+    # goes to mission
+    await DRIVE_BASE.straight(200)
+    DRIVE_BASE.reset(angle=0)
+    # meets the funnel and it turns right
+    # await DRIVE_BASE.turn(-16) 
+    #it was -27
+    DRIVE_BASE.reset(angle=0)
+    # await DRIVE_BASE.straight(200) #it was commented
+    # # await DRIVE_BASE.turn(10)
     LEFT_ATTACHMENT.reset_angle(0)
-    await LEFT_ATTACHMENT.run_target(1000, -800)
-    await DRIVE_BASE.turn(30)
-    
-    await DRIVE_BASE.straight(-110)
-    RIGHT_ATTACHMENT.reset_angle(0)
-    await multitask(RIGHT_ATTACHMENT.run_target(1000,-800),DRIVE_BASE.turn(110))
-    await DRIVE_BASE.straight(350)
-   
-    RIGHT_ATTACHMENT.reset_angle(0)
-    # await multitask(RIGHT_ATTACHMENT.run_target(600,500),DRIVE_BASE.turn(40))
-    await RIGHT_ATTACHMENT.run_target(600,600)
-    await DRIVE_BASE.turn(40)
-    SPEED = 850
-    ACCELERATION = 850
-    TURN_SPEED = 550
-    TURN_ACCELERATION = 550
+    await LEFT_ATTACHMENT.run_target(300, -700)
+    await DRIVE_BASE.turn(10)
+    DRIVE_BASE.reset(angle=0)
+    await DRIVE_BASE.straight(-150)
+    # goes to mission
+    SPEED = 450
+    ACCELERATION = 650
+    TURN_SPEED = 250
+    TURN_ACCELERATION = 200
     DRIVE_BASE.settings(straight_speed=SPEED)
     DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
     DRIVE_BASE.settings(turn_rate=TURN_SPEED)
     DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
     DRIVE_BASE.reset(distance=0, angle=0)
-    await DRIVE_BASE.straight(-100)
-    await DRIVE_BASE.turn(80)
+    DRIVE_BASE.use_gyro(True)
+    RIGHT_ATTACHMENT.reset_angle(0)
+    await multitask(RIGHT_ATTACHMENT.run_target(1000,-1000),DRIVE_BASE.turn(107)) #121
+    DRIVE_BASE.reset(angle=0)
+    await DRIVE_BASE.straight(320)
+   
+    # RIGHT_ATTACHMENT.reset_angle(0)
+    # # await multitask(RIGHT_ATTACHMENT.run_target(600,500),DRIVE_BASE.turn(40))
+    await RIGHT_ATTACHMENT.run_target(800,150)
+    SPEED = 450
+    ACCELERATION = 650
+    TURN_SPEED = 350
+    TURN_ACCELERATION = 450
+    DRIVE_BASE.settings(straight_speed=SPEED)
+    DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+    DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+    DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+    DRIVE_BASE.reset(distance=0, angle=0)
+    DRIVE_BASE.use_gyro(True)
+    await DRIVE_BASE.turn(46) #35
+    SPEED = 1000
+    ACCELERATION = 1000
+    TURN_SPEED = 750
+    TURN_ACCELERATION = 650
+    DRIVE_BASE.settings(straight_speed=SPEED)
+    DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+    DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+    DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+    DRIVE_BASE.reset(distance=0, angle=0)
+    await DRIVE_BASE.straight(-90)
+    await DRIVE_BASE.turn(82) #90
     DRIVE_BASE.use_gyro(False)
-    await DRIVE_BASE.straight(-600)
+    await DRIVE_BASE.straight(-850)
 
     time2 = watch.time() 
     print(f"Time to finish: {time2 - time1} ms")

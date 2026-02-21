@@ -7,8 +7,8 @@ from library import set_drivebase
 
 async def m12():
     # The main program starts here.
-    SPEED = 650
-    ACCELERATION = 650
+    SPEED = 500
+    ACCELERATION = 900
     TURN_SPEED = 150
     TURN_ACCELERATION = 150
     DRIVE_BASE.settings(straight_speed=SPEED)
@@ -18,9 +18,10 @@ async def m12():
     DRIVE_BASE.reset(distance=0, angle=0)
     DRIVE_BASE.use_gyro(True)
 
-    await DRIVE_BASE.straight(600)
+    await DRIVE_BASE.straight(550)
     # await DRIVE_BASE.turn(80)
-    wait(50)
-    await RIGHT_ATTACHMENT.run_angle(300, 80)
-    await RIGHT_ATTACHMENT.run_angle(350, -250)
+    wait(200)
+    # await RIGHT_ATTACHMENT.run_angle(300, 80)
+    await RIGHT_ATTACHMENT.run_angle(350, -350)
     await DRIVE_BASE.straight(-500)
+    DRIVE_BASE.use_gyro(False)

@@ -22,8 +22,8 @@ async def m910():
     if combined==1:
         await DRIVE_BASE.straight(15)
 
-        await DRIVE_BASE.turn(-42)#need
-        await DRIVE_BASE.straight(500) #need
+        await DRIVE_BASE.turn(-43)#need
+        await DRIVE_BASE.straight(492) #need
         LEFT_ATTACHMENT.reset_angle(0) #need
         await LEFT_ATTACHMENT.run_angle(100, -50) #need
         LEFT_ATTACHMENT.reset_angle(0)
@@ -32,7 +32,8 @@ async def m910():
         RIGHT_ATTACHMENT.reset_angle(0) #need
         await RIGHT_ATTACHMENT.run_target(1000,3000) #need
         # await wait(500)
-        await DRIVE_BASE.straight(60) #need
+        await DRIVE_BASE.straight(-20) #need
+        await DRIVE_BASE.straight(80) #need
         # wait(500)
         LEFT_ATTACHMENT.reset_angle(0)
         await LEFT_ATTACHMENT.run_target(100, 100)
@@ -46,6 +47,15 @@ async def m910():
         RIGHT_ATTACHMENT.reset_angle(0)
         await RIGHT_ATTACHMENT.run_target(1000,-1750)
         # wait(100)
+        SPEED = 900
+        ACCELERATION = 900
+        TURN_SPEED = 450
+        TURN_ACCELERATION = 450
+        DRIVE_BASE.settings(straight_speed=SPEED)
+        DRIVE_BASE.settings(straight_acceleration=ACCELERATION)
+        DRIVE_BASE.settings(turn_rate=TURN_SPEED)
+        DRIVE_BASE.settings(turn_acceleration=TURN_ACCELERATION)
+        DRIVE_BASE.reset(distance=0, angle=0) 
         DRIVE_BASE.use_gyro(False)
         await DRIVE_BASE.curve(-500, 60)
         

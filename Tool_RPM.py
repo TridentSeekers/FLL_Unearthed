@@ -48,10 +48,10 @@ if Robot_name == 'Daniel':
     LEFT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
     RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
 elif Robot_name == 'Luke':
-    DRIVE_LEFT = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-    DRIVE_RIGHT = Motor(Port.D, Direction.CLOCKWISE)
+    DRIVE_LEFT = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+    DRIVE_RIGHT = Motor(Port.E, Direction.CLOCKWISE)
     LEFT_ATTACHMENT = Motor(Port.C, Direction.CLOCKWISE)
-    RIGHT_ATTACHMENT = Motor(Port.E, Direction.CLOCKWISE)
+    RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
 elif Robot_name == 'Joy':
     DRIVE_LEFT = Motor(Port.D, Direction.COUNTERCLOCKWISE)
     DRIVE_RIGHT = Motor(Port.A, Direction.CLOCKWISE)
@@ -68,8 +68,8 @@ elif Robot_name == 'V':
     # LEFT_ATTACHMENT = Motor(Port.B, Direction.CLOCKWISE)
     # RIGHT_ATTACHMENT = Motor(Port.A, Direction.CLOCKWISE)
 
-motorLeft = DRIVE_LEFT
-motorRight = DRIVE_RIGHT
+motorLeft = LEFT_ATTACHMENT#DRIVE_LEFT
+motorRight = RIGHT_ATTACHMENT #DRIVE_RIGHT
 timer = StopWatch()
 
 buf_left = 0
